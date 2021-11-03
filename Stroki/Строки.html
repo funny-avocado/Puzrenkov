@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <script>
+        function TextID(){
+            var t = String(document.getElementById("text").value);
+            var exclam;
+            var question;
+
+            // Поиск знаков препинания
+            if(t.includes("?")){
+                question = t.split("?");
+            }
+            if(t.includes("!")){
+                exclam = t.split("!");
+            }
+
+            var tempStr;
+
+            for(var i = 0; i < question.length; i++){
+                if(question[i].includes("!")){ // Нахождение в вопросительной строке восклицательные строки
+                    tempStr = question[i].split("!");
+                    question[i] = tempStr[tempStr.length-1];
+                }
+                if(i+1!=question.length) question[i] += "?";
+            }
+
+            for(var i = 0; i < exclam.length; i++){
+                if(exclam[i].includes("?")){ // Нахождение в восклицателной строке вопросительные строки
+                    tempStr = exclam[i].split("?");
+                    exclam[i] = tempStr[tempStr.length-1];
+                }
+                if(i+1!=exclam.length) exclam[i] += "!";
+            }
+
+            alert("Сейчас будут все вопросительные предложения");
+            alert(question);
+            alert("Сейчас будут все восклицательные предложения");
+            alert(exclam);
+        }
+    </script>
+
+    <form id="forma">
+        <input type="text" id="text">
+        <input type="submit" onclick="TextID()" value="Отправить">
+    </form>
+</body>
+</html>

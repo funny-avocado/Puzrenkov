@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript</title>
+</head>
+<body>
+    <script>
+        function TextID(){
+            var x = +document.getElementById("x").value; // Считываю из id (под названием Num) число, которое будет заменять в формуле x. + приводит в численный тип значения из submit
+            var n = +document.getElementById("n").value; // Считываю из id (под названием Num) число, которое указывает количество проходов.
+            var sum = 0; // переменная, которая будет хранить сумму результата n-го прохода
+            var point = 0; // вычисления в одном проходе
+
+            for(var i = 1; i <= n; i++){
+                point = ((x-1)**((2*i)+1))/(((2*i)+1)*(x+1)**((2*i)+1)); // реализация формулы
+                sum += point; // прибавляю вычисления в одном проходе к основному результату
+            }
+
+            sum *= 2; // раскрытие скобок в цикле не предусматривала, поэтому делаю это здесь умножая на 2
+
+            alert(sum);
+        }
+    </script>
+
+    <form id="forma">
+        <input type="text" id="x">
+        <input type="text" id="n">
+        <input type="submit" onclick="TextID()" value="Отправить">
+    </form>
+</body>
+</html>
