@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <script>
+        function Vec(x1,x2,x3){
+            this.x = x1;
+            this.y = x2;
+            this.z = x3;
+
+            this.len = function(){
+                var answer = Math.sqrt((this.x*this.x) + (this.y*this.y) + (this.z*this.z));
+                alert("Длина вектор - " + answer);
+            }
+        }
+
+        var x = prompt("x"), y = prompt("Y"), z = prompt("z");
+        var vector = new Vec(x,y,z);
+        vector.len();
+    </script>
+</body>
+</html>
