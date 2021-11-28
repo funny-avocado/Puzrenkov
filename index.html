@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	var A = +prompt("Введите а");
+	var m = +prompt("Введите Модуль");
+	var x =0;
+	if(A % 2 == 0 && x % 2 == 0) alert("Обратных чисел нет");
+	else{
+		for(var i = 0; i < m; i++){
+			x = A * i;
+			if(x >m){
+				x=x%m;
+			}
+			if (x==1){alert("Обратное число - " + i); break;}
+		}
+	}
+</script>
+</body>
+</html>
