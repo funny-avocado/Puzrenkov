@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Лаба по изменению цвета фона и изменение ссылки</title>
+    <style>
+        .divv{
+            margin: 15px;
+        }   
+    </style>
+</head>
+<body>
+        <div class="divv">
+            <input type="text" id="colorbg">
+            <button onclick="changeBackground()">Поменять цвет заднего фона</button>
+        </div>
+
+        <div class="divv">
+            <input type="text" id="lk">
+            <input type="submit" onclick="changeLink()" value="Изменить ссылку">
+            <br>
+            <a style="color: black;" href="https://google.ru">Перейти по ссылке</a>
+        </div>
+
+ 
+        <div class="divv">
+            <h2 id="test">Меняем цвет текста</h2>
+            <input type="text" id="ch">
+            <button onclick="changeColorText()">Поменять цвет</button>
+        </div>
+        <script>
+            
+            function changeBackground(){
+                var colorBG = document.getElementById("colorbg").value;
+                if(colorBG == "none") document.body.style.background = "white";
+                else document.body.style.background = colorBG;
+            }
+
+            function changeLink(){
+                var a = document.querySelector('a[href="https://google.ru"]');
+                var b = document.getElementById("lk").value;
+                a.setAttribute("href", b);
+            }
+
+            function changeColorText(){
+                var textColor = document.getElementById("test");
+                var text = document.getElementById("ch").value;
+                
+                textColor.style.color = text;
+            }
+    </script>
+</body>
+</html>
