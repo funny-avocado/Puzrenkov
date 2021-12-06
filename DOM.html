@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Лаба про DOM</title>
+    <style>
+        .divv{
+            margin: 15px;
+        }   
+    </style>
+</head>
+<body>
+        <div class="divv">
+            <input type="text" id="colorbg">
+            <button onclick="changeBackground()">Поменять цвет заднего фона</button>
+        </div>
+
+        <div class="divv">
+            <input type="text" id="lk">
+            <input type="submit" onclick="changeLink()" value="Изменить ссылку">
+            <br>
+            <a style="color: black;" href="https://google.ru">Перейти по ссылке</a>
+        </div>
+
+ 
+        <div class="divv">
+            <h2 id="test">Меняем цвет текста</h2>
+            <input type="text" id="ch">
+            <button onclick="changeColorText()">Поменять цвет</button>
+        </div>
+        <script>
+
+           var browser = navigator.userAgent;
+            var answer = 0;
+            var x = prompt("Введите ваш X");
+            if(browser.indexOf("Chrome") > -1){
+                answer = 10**x;
+            }
+            else if(browser.indexOf("Opera") > -1){
+                answer = 10 * x;
+            }
+            else if(browser.indexOf("Firefox") > -1){
+                answer = Math.sign(x);
+            }
+            else if(browser.indexOf("Edge") > -1){
+                answer = 10 / x;
+            }
+            alert(answer);
+            
+    </script>
+</body>
+</html>
