@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<body>
+	<script type="text/javascript">
+		var browser = navigator.userAgent;
+		var answer = 0;
+		var x = prompt("Введите ваш X");
+		if(browser.indexOf("Chrome") > -1){
+		answer = 10**x;
+		}
+		else if(browser.indexOf("Opera") > -1){
+		answer = 10 * x;
+		}
+		else if(browser.indexOf("Firefox") > -1){
+		answer = Math.sign(x);
+		}
+		else if(browser.indexOf("Edge") > -1){
+		answer = 10 / x;
+		}
+alert(answer);
+	</script>
+</body>
+</head>
+</html>
